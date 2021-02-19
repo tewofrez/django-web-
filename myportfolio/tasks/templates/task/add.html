@@ -8,11 +8,12 @@
 </head>
 {% block body %}
 
-<form action="">
+<form action="{% url 'task:add'  %}" metod="post">
+    {% csrf_token %}
     <input type="text" , name="task">
     <input type="submit">
 </form>
-
+<a href="{% url 'task:index' %}">add new task</a>
 {% endblock %}
 
 </html>
